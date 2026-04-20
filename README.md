@@ -4,7 +4,7 @@ SQL project analysing insurance data quality and control issues
 ## Sample Results
 
 ### Premium Validation
-![Premium Check](premium_check.png)
+![Premium Check](premium_validation_result.png)
 
 ### Date Integrity Issue
 ![Date Issue](date_issue.png)
