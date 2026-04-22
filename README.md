@@ -1,45 +1,64 @@
-# Insurance Data Quality Analysis
+# Data Quality & Revenue Validation Analysis (SQL Project)
 
-SQL project analysing insurance policy and premium transaction data to identify data quality issues and control failures.
+SQL project focused on validating transactional data accuracy and identifying anomalies that may impact revenue, reporting, and operational reliability.
 
 ## Overview
-This project focuses on validating data accuracy in an insurance environment rather than building dashboards or predictive models. 
+This project focuses on analysing transactional data to detect inconsistencies, validate business rules, and identify potential data quality issues.
 
-It simulates real-world checks that would typically be performed by an Insurance Data Officer, including premium validation, data integrity checks, and control monitoring.
+Rather than building dashboards or predictive models, the project simulates real-world validation checks commonly performed in operations, finance, and commercial analytics environments.
+
+It demonstrates how structured SQL logic can be used to uncover errors, ensure data integrity, and support reliable decision-making.
 
 ## Dataset
-The project uses three core tables:
-- **customers** – customer information and join dates  
-- **policies** – policy details including start date and base premium  
-- **premium_transactions** – actual premium charges and source systems  
+The project uses a simulated transactional dataset representing a subscription-based business model.
 
-## Sample Results
+It consists of three core tables:
+
+- **customers** – customer information and join dates  
+- **policies** – product/service agreements and pricing details  
+- **premium_transactions** – actual billing transactions and source systems  
+
+## Key Validation Checks
 
 ### Premium Validation
 ![Premium Check](premium_validation_result.png)
 
-This analysis compares expected premium (base premium) with actual charged amounts and identifies:
+This analysis compares expected charges (based on base pricing) with actual transactions to identify:
+
 - Missing charges  
 - Overcharged transactions  
 - Undercharged transactions  
+
+These discrepancies highlight potential revenue leakage and billing inconsistencies.
 
 ---
 
 ### Date Integrity Issue
 ![Date Issue](date_issue.png)
 
-This check identifies cases where a policy start date occurs before the customer join date, indicating a data integrity issue.
+This check identifies cases where a service or policy start date occurs before the customer join date.
+
+Such inconsistencies indicate data integrity issues that can impact reporting accuracy and downstream processes.
 
 ---
 
 ### Post-Cancellation Transactions
 ![Cancellation Issue](cancellation_issue.png)
 
-This analysis detects transactions processed after a policy has been cancelled, highlighting a control failure and potential compliance risk.
+This analysis detects transactions processed after a policy or service has been cancelled.
+
+These cases represent control failures and potential compliance or financial risks.
 
 ## Tools
 - SQL Server  
 - Azure Data Studio  
 
-## Purpose
-This project demonstrates how SQL can be used to perform data validation, detect anomalies, and identify business risks in insurance data.
+## Business Value
+This project demonstrates how SQL can be used to:
+
+- Validate transactional data accuracy  
+- Detect anomalies and inconsistencies  
+- Identify potential revenue leakage  
+- Support reliable reporting and operational decision-making  
+
+The techniques used are applicable across multiple domains, including finance, logistics, operations, and subscription-based services.
